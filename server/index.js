@@ -4,7 +4,8 @@ import bodyParser from "body-parser";
 import { MikroORM } from "@mikro-orm/sqlite";
 import mikroConfig from "./mikro-orm.config.js";
 import { RequestHistory } from "./entities/RequestHistory.js";
-import "dotenv/config";
+import dotenv from "dotenv";
+dotenv.config();
 
 const PORT = process.env.PORT || 4000;
 const app = express();
