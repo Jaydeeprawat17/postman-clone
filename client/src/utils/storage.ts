@@ -1,6 +1,6 @@
 import { RequestHistoryItem } from "../types";
 
-const API_URL = "https://postman-backend-fej1.onrender.com"; // your Express backend
+const API_URL = "https://postman-backend-fej1.onrender.com/api"; // your Express backend
 
 export async function saveToHistory(item: RequestHistoryItem): Promise<void> {
   await fetch(`${API_URL}/save-request`, {
