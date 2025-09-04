@@ -4,7 +4,9 @@ import bodyParser from "body-parser";
 import { MikroORM } from "@mikro-orm/sqlite";
 import mikroConfig from "./mikro-orm.config.js";
 import { RequestHistory } from "./entities/RequestHistory.js";
+import "dotenv/config";
 
+const PORT = process.env.PORT || 4000;
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
@@ -56,7 +58,7 @@ app.delete("/api/history", async (req, res) => {
   const generator = orm.getSchemaGenerator();
   await generator.updateSchema(); // creates tables automatically
 
-  app.listen(4000, () =>
-    console.log("Server running on http://localhost:4000")
+  app.listen(PORT, () =>
+    console.log("Server running on http://localhost:" + PORT)
   );
 })();
